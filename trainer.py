@@ -294,7 +294,7 @@ class GANTrainer(object):
 
                     with torch.no_grad():
                         _, st_fake, m_mu, m_logvar, c_mu, c_logvar, _ = \
-                            netG.sample_videos(st_motion_input, st_content_input, seg=use_segment) # m_mu (60,365), c_mu (12,124)
+                            netG.sample_videos(st_motion_input, st_content_input) # m_mu (60,365), c_mu (12,124)
 
                         _, im_fake, im_mu, im_logvar, cim_mu, cim_logvar, se_fake = \
                             netG.sample_images(im_motion_input, im_content_input, seg=use_segment) # im_mu (60,489), cim_mu (60,124)
@@ -363,7 +363,7 @@ class GANTrainer(object):
                     # (2) Update G network
                     ###########################
                     netG.zero_grad()
-                    video_latents, st_fake, m_mu, m_logvar, c_mu, c_logvar, _ = netG.sample_videos(st_motion_input, st_content_input, seg=use_segmen, seg=use_segmentt)
+                    video_latents, st_fake, m_mu, m_logvar, c_mu, c_logvar, _ = netG.sample_videos(st_motion_input, st_content_input)
                     image_latents, im_fake, im_mu, im_logvar, cim_mu, cim_logvar, se_fake = netG.sample_images(im_motion_input, im_content_input,
                         seg=use_segment)
                     encoder_decoder_loss = 0

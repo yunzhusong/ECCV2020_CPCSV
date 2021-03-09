@@ -1,5 +1,4 @@
-#python main_pororo.py --load_ckpt='40'
-python main_pororo.py --eval_fid=True
+python main_pororo.py --eval_fid=True --cfg='./output/base_wSEGPart_wrayConfig/setting.yml'
 
 
 
