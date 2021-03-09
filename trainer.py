@@ -402,12 +402,16 @@ class GANTrainer(object):
                     im_kl_loss = KL_loss(cim_mu, cim_logvar)
                     st_kl_loss = KL_loss(c_mu, c_logvar)
 
-                    errG =  im_errG + self.ratio * ( image_weight*st_errG + se_errG*segment_weight) # for record
+                    #errG =  im_errG + self.ratio * ( image_weight*st_errG + se_errG*segment_weight) # for record
+                    errG =  im_errG + se_errG + self.ratio * ( st_errG) # change back
                     kl_loss = im_kl_loss + self.ratio * st_kl_loss # for record
 
                     # Total Loss
+                    #errG_total = im_errG + im_kl_loss * cfg.TRAIN.COEFF.KL \
+                    #    + self.ratio * (se_errG*segment_weight + st_errG*image_weight + st_kl_loss * cfg.TRAIN.COEFF.KL)
                     errG_total = im_errG + im_kl_loss * cfg.TRAIN.COEFF.KL \
-                        + self.ratio * (se_errG*segment_weight + st_errG*image_weight + st_kl_loss * cfg.TRAIN.COEFF.KL)
+                        + se_errG \
+                        + self.ratio * (st_errG + st_kl_loss * cfg.TRAIN.COEFF.KL) # change back
 
                     if video_latents is not None:
                         errG_total += ( video_latent_loss +  reconstruct_loss )* cfg.RECONSTRUCT_LOSS
