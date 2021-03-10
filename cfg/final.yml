@@ -1,10 +1,10 @@
-CONFIG_NAME: 'base_wSEGPart2_rayConfig_rerun'
+CONFIG_NAME: 'final_model_new'
 
 DATASET_NAME: ''
 EMBEDDING_TYPE: 'universal'
 GPU_ID: '0'
 Z_DIM: 100
-DATA_DIR: './pororo_dataset/img_pororo/'
+DATA_DIR: './img_pororo/'
 IMSIZE: 64
 SESIZE: 64
 WORKERS: 6 
@@ -21,8 +21,9 @@ SEGMENT_RATIO: 1.0
 IMAGE_RATIO: 5.0
 TRAIN:
     FLAG: True
-    IM_BATCH_SIZE: 90   #100 #60 #120
-    ST_BATCH_SIZE: 18  #20 #12 #24
+    SEGMENT_NAME: 'img_segment_refine'
+    IM_BATCH_SIZE: 90
+    ST_BATCH_SIZE: 18
     MAX_EPOCH: 120
     LR_DECAY_EPOCH: 20
     SNAPSHOT_INTERVAL: 10

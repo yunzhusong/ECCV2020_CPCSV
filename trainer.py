@@ -42,7 +42,6 @@ from tqdm import tqdm
 class GANTrainer(object):
     def __init__(self, output_dir, args, ratio=1.0):
         if cfg.TRAIN.FLAG:
-            #output_dir = output_dir + '_r' + str(ratio) + '/'
             output_dir = "{}/".format(output_dir)
             self.model_dir = os.path.join(output_dir, 'Model')
             self.image_dir = os.path.join(output_dir, 'Image')
@@ -402,16 +401,12 @@ class GANTrainer(object):
                     im_kl_loss = KL_loss(cim_mu, cim_logvar)
                     st_kl_loss = KL_loss(c_mu, c_logvar)
 
-                    #errG =  im_errG + self.ratio * ( image_weight*st_errG + se_errG*segment_weight) # for record
-                    errG =  im_errG + se_errG + self.ratio * ( st_errG) # change back
+                    errG =  im_errG + self.ratio * ( image_weight*st_errG + se_errG*segment_weight) # for record
                     kl_loss = im_kl_loss + self.ratio * st_kl_loss # for record
 
                     # Total Loss
-                    #errG_total = im_errG + im_kl_loss * cfg.TRAIN.COEFF.KL \
-                    #    + self.ratio * (se_errG*segment_weight + st_errG*image_weight + st_kl_loss * cfg.TRAIN.COEFF.KL)
                     errG_total = im_errG + im_kl_loss * cfg.TRAIN.COEFF.KL \
-                        + se_errG \
-                        + self.ratio * (st_errG + st_kl_loss * cfg.TRAIN.COEFF.KL) # change back
+                        + self.ratio * (se_errG*segment_weight + st_errG*image_weight + st_kl_loss * cfg.TRAIN.COEFF.KL)
 
                     if video_latents is not None:
                         errG_total += ( video_latent_loss +  reconstruct_loss )* cfg.RECONSTRUCT_LOSS
@@ -480,8 +475,6 @@ class GANTrainer(object):
             epoch_hours = int(epoch_mins / 60)
 
             print("----[{}/{}]Epoch time:{} hours {} mins, Total time:{} hours----".format(epoch, self.max_epoch, epoch_hours, epoch_mins, time_hours))
-            #print('[{}/{}][{}/{}] LossG:{:.4f} LossD_se:{:.4f} LossD_im:{:.4f} LossD_st:{:.4f}'\
-            #              .format(epoch, self.max_epoch, i, num_step, errG_total.data, se_errD.data, im_errD.data, st_errD.data))
 
             if epoch % self.snapshot_interval == 0:
                 save_model(netG, netD_im, netD_st, netD_se, epoch, self.model_dir)
