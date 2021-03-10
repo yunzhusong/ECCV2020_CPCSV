@@ -39,10 +39,6 @@ images/
 
 Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4c0md0CAK?usp=sharing)
 
-## Pretrained model
-
-Pretrained model can be download [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). Model parameters are the default used in this repository.
-
 ### Setup environment
 
 ```
@@ -51,18 +47,39 @@ Pretrained model can be download [here](https://drive.google.com/drive/folders/1
     pip install -r requirements.txt
 ```
 
-### Run the code
+
+### Train CPCSV
+
+### Steps
 
 1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
 
 2. Modify the **DATA_DIR** in _./cfg/final.yml_
 
-3. To train from scratch:
+3. The dafault hyper-parameters in _./cfg/final.yml_ are set to reproduce the paper results. To train from scratch:
+
 ```
 ./script.sh
 ```
 
-4. To run the evaluation:
+4. To run the evaluation, specify the _--cfg to ./output/yourmodelname/setting.yml_, e.g.,:
+
+```
+./script_inference.sh
+```
+
+### Evaluate CPCSV
+
+Pretrained model can be download [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). 
+
+### Steps
+
+1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
+
+2. Modify the **DATA_DIR** in _./cfg/final.yml_
+
+3. To evaluate the pretrained model:
+
 ```
 ./script_inference.sh
 ```
@@ -83,8 +100,6 @@ Pretrained model can be download [here](https://drive.google.com/drive/folders/1
     year={2020} 
 }
 ```
-
-All materials are transfer to [here](https://github.com/basiclab/CPCStoryVisualization-Pytorch).
 
 ### The slide and the presentation video:
 The slide and the presentation video can be found in [slides](https://drive.google.com/drive/folders/14LTxd9D1eAjEK4JaZpu0Bdhhc6zKoBMv?usp=sharing).
