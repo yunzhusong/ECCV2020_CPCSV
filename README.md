@@ -21,8 +21,11 @@ In this paper we propose a new framework named Character-Preserving Coherent Sto
 CP-CSV effectively learns to visualize the story by three critical modules: story and context encoder (story and sentence representation learning), figure-ground segmentation (auxiliary task to provide information for preserving character and story consistency), and figure-ground aware generation (image sequence generation by incorporating figure-ground information). Moreover, we propose a metric named Frechet Story Distance (FSD) to evaluate the performance of story visualization. Extensive experiments demonstrate that CP-CSV maintains the details of character information and achieves high consistency among different frames, while FSD better measures the performance of story visualization.
 
 ## Datasets
+1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing).
 
-CLEVR with segmentation mask, 13755 sequence of images, generate using [Clevr-for-StoryGAN](https://github.com/theblackcat102/Clevr-for-StoryGAN)
+Pororo, original pororo datasets with self labeled segmentation mask of the character.
+
+2. CLEVR with segmentation mask, 13755 sequence of images, generate using [Clevr-for-StoryGAN](https://github.com/theblackcat102/Clevr-for-StoryGAN)
 
 ```
 images/
@@ -38,17 +41,11 @@ images/
 
 Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4c0md0CAK?usp=sharing)
 
-Pororo, original pororo datasets with self labeled segmentation mask of the character.
-
 ## Pretrained model
 
-weights for pretrained model can be download at [link](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing)
+Pretrained model can be download at [link](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing).
 
-training images and preprocess data can be found [here](https://drive.google.com/file/d/1rDjmMr3iqkBjEoE6g05iGyY1I7pi8FTn/view?usp=sharing)
-
-Model parameters is the default used in this repository
-
-## Setup
+Model parameters is the default used in this repository.
 
 ### Setup environment
 
@@ -58,47 +55,33 @@ Model parameters is the default used in this repository
     pip install -r requirements.txt
 ```
 
-
 Create a environment file .env with the following line:
 
 ```
 DATAPATH = "PATH TO pororoSV/"
 ```
 
-### File placement 
+### Run the code
 
-pororoSV should contain SceneDialogues/  ( where gif files reside ) and *.npy files
+1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
 
-1. setup image for video dataloader
+2. Modify the **DATA_DIR** in _./cfg/final.yml_
 
+3. To train from scratch:
 ```
-    python preprocess_pororo.py
-```
-
-2. Segment results should placed under DATAPATH and rename as img_segment 
-
-
-
-3. Change related directory PORORO_PATH, etc
-
-
-4. Try to run main_pororo.py and good luck
-
-
-```
-python main_pororo.py --cfg ./cfg/consistency.yml
+./script.sh
 ```
 
-You need to change the DATA_DIR found in cfg/consistency.yml
-
+4. To run the evaluation:
+```
+./script_inference.sh
+```
 
 ### Tensorboard
 
 ```
     tensorboard --logdir output/ --host 0.0.0.0 --port 6009
 ```
-
-
 
 ## Cite
 
