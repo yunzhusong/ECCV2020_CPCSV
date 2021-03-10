@@ -21,9 +21,7 @@ In this paper we propose a new framework named Character-Preserving Coherent Sto
 CP-CSV effectively learns to visualize the story by three critical modules: story and context encoder (story and sentence representation learning), figure-ground segmentation (auxiliary task to provide information for preserving character and story consistency), and figure-ground aware generation (image sequence generation by incorporating figure-ground information). Moreover, we propose a metric named Frechet Story Distance (FSD) to evaluate the performance of story visualization. Extensive experiments demonstrate that CP-CSV maintains the details of character information and achieves high consistency among different frames, while FSD better measures the performance of story visualization.
 
 ## Datasets
-1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing).
-
-Pororo, original pororo datasets with self labeled segmentation mask of the character.
+1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). Pororo, original pororo datasets with self labeled segmentation mask of the character.
 
 2. CLEVR with segmentation mask, 13755 sequence of images, generate using [Clevr-for-StoryGAN](https://github.com/theblackcat102/Clevr-for-StoryGAN)
 
@@ -43,9 +41,7 @@ Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4
 
 ## Pretrained model
 
-Pretrained model can be download at [link](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing).
-
-Model parameters is the default used in this repository.
+Pretrained model can be download [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). Model parameters are the default used in this repository.
 
 ### Setup environment
 
@@ -53,12 +49,6 @@ Model parameters is the default used in this repository.
     virtualenv -p python3 env
     source env/bin/activate
     pip install -r requirements.txt
-```
-
-Create a environment file .env with the following line:
-
-```
-DATAPATH = "PATH TO pororoSV/"
 ```
 
 ### Run the code
