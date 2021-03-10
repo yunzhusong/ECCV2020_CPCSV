@@ -39,7 +39,7 @@ images/
 
 Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4c0md0CAK?usp=sharing)
 
-### Setup environment
+## Setup environment
 
 ```
     virtualenv -p python3 env
@@ -48,7 +48,7 @@ Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4
 ```
 
 
-### Train CPCSV
+## Train CPCSV
 
 ### Steps
 
@@ -68,7 +68,7 @@ Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4
 ./script_inference.sh
 ```
 
-### Evaluate CPCSV
+## Evaluate CPCSV
 
 Pretrained model can be download [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). 
 
@@ -84,11 +84,17 @@ Pretrained model can be download [here](https://drive.google.com/drive/folders/1
 ./script_inference.sh
 ```
 
-### Tensorboard
+## Tensorboard
+
+Use the tensorboard to check the results.
 
 ```
     tensorboard --logdir output/ --host 0.0.0.0 --port 6009
 ```
+
+## The slide and the presentation video:
+The slide and the presentation video can be found in [slides](https://drive.google.com/drive/folders/14LTxd9D1eAjEK4JaZpu0Bdhhc6zKoBMv?usp=sharing).
+
 
 ## Cite
 
@@ -100,6 +106,3 @@ Pretrained model can be download [here](https://drive.google.com/drive/folders/1
     year={2020} 
 }
 ```
-
-### The slide and the presentation video:
-The slide and the presentation video can be found in [slides](https://drive.google.com/drive/folders/14LTxd9D1eAjEK4JaZpu0Bdhhc6zKoBMv?usp=sharing).
