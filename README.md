@@ -18,7 +18,7 @@ Objects in pictures should so be arranged as by their very position to tell thei
 In this paper we propose a new framework named Character-Preserving Coherent Story Visualization (CP-CSV) to tackle the challenges in story visualization: generating a sequence of images that emphasizes preserving the global consistency of characters and scenes across different story pictures.
 
 
-CP-CSV effectively learns to visualize the story by three critical modules: story and context encoder (story and sentence representation learning), figure-ground segmentation (auxiliary task to provide information for preserving character and story consistency), and figure-ground aware generation (image sequence generation by incorporating figure-ground information). Moreover, we propose a metric named Frechet Story Distance (FSD) to evaluate the performance of story visualization. Extensive experiments demonstrate that CP-CSV maintains the details of character information and achieves high consistency among different frames, while FSD better measures the performance of story visualization.
+CP-CSV effectively learns to visualize the story by three critical modules: story and context encoder (story and sentence representation learning), figure-ground segmentation (auxiliary task to provide information for preserving character and story consistency), and figure-ground aware generation (image sequence generation by incorporating figure-ground information). Moreover, we propose a metric named Frechet Story Distance (FSD) to evaluate the performance of story visualization. Extensive experiments demonstrate that CP-CSV maintains the details of character information and achieves high consistency among different frames, while FSD better measures the performance of story visualization. The FVD evaluation metric is from [here](https://github.com/google-research/google-research/tree/master/frechet_video_distance).
 
 ## Datasets
 1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). Pororo, original pororo datasets with self labeled segmentation mask of the character.
@@ -78,7 +78,7 @@ Pretrained model can be download [here](https://drive.google.com/drive/folders/1
 
 2. Modify the **DATA_DIR** in _./cfg/final.yml_
 
-3. To evaluate the pretrained model:
+3. To evaluate FID, FSD of the pretrained model:
 
 ```
 ./script_inference.sh
