@@ -5,7 +5,8 @@
 
 Author: [@yunzhusong](http://github.com/yunzhusong), [@theblackcat102](http://github.com/theblackcat102), [@redman0226](http://github.com/redman0226), Huiao-Han Lu, Hong-Han Shuai
 
-[Paper(PDF)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620018.pdf)
+[Paper Link (ECCV2020)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620018.pdf)
+
 [Originization](https://github.com/basiclab/CPCStoryVisualization-Pytorch)
 
 Code implementation for Character-Preserving Coherent Story Visualization
