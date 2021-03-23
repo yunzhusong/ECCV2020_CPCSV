@@ -1,11 +1,11 @@
-# CPCStoryVisualization-Pytorch
+# CPCStoryVisualization-Pytorch (ECCV 2020)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/character-preserving-coherent-story/story-visualization-on-pororo)](https://paperswithcode.com/sota/story-visualization-on-pororo?p=character-preserving-coherent-story)
 
 ![](https://raw.githubusercontent.com/basiclab/CPCStoryVisualization-Pytorch/master/images/introduction4.jpg)
 
 Author: [@yunzhusong](http://github.com/yunzhusong), [@theblackcat102](http://github.com/theblackcat102), [@redman0226](http://github.com/redman0226), Huiao-Han Lu, Hong-Han Shuai
 
-[Paper Link (ECCV2020)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620018.pdf)
+[Paper Link (ECCV 2020)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620018.pdf)
 
 [Originization](https://github.com/basiclab/CPCStoryVisualization-Pytorch)
 
