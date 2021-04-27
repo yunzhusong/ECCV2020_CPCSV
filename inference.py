@@ -155,8 +155,10 @@ class Infer(object):
 
         origin_img_path = os.path.join(self.save_dir, 'original')
         generated_img_path = os.path.join(self.save_dir, 'generate')
+        sequence_img_path = os.path.join(self.save_dir, 'sequence')
         os.makedirs(origin_img_path, exist_ok=True)
         os.makedirs(generated_img_path, exist_ok=True)
+        os.makedirs(sequence_img_path, exist_ok=True)
 
         print('Generating Test Samples...')
         save_images, save_labels = [], []
@@ -187,6 +189,14 @@ class Infer(object):
                 generated_story_path = os.path.join(generated_img_path, str(story_id))
                 os.makedirs(generated_story_path, exist_ok=True)
 
+                # For generating sequence images
+                story = torch.cat([fake_story.cpu(), real_story], dim=2)
+                sequence = torch.cat([img for img in story], dim=2)
+                sequence_img = images_to_numpy(sequence)
+                sequence_img = PIL.Image.fromarray(sequence_img)
+                sequence_img.save(os.path.join(sequence_img_path, str(story_id)+'.png'))
+
+                # For calculating FID score
                 for idx, (fake, real) in enumerate(zip(fake_story, real_story)):
                     fake_img = images_to_numpy(fake)
                     fake_img = PIL.Image.fromarray(fake_img)
@@ -206,7 +216,7 @@ class Infer(object):
 
         models = os.listdir(self.model_dir)
 
-        for epoch in range(121, 0, -1):
+        for epoch in range(120, 119, -1):
             if 'netG_epoch_{}.pth'.format(epoch) in models:
                 if os.path.exists(os.path.join(self.save_dir, 'original')):
                     shutil.rmtree(os.path.join(self.save_dir, 'original'))

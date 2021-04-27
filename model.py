@@ -406,7 +406,6 @@ class StoryGAN(nn.Module):
             fake_video = fake_video.view(-1, self.video_len, self.n_channels, self.segment_size, self.segment_size)
             fake_video = fake_video.permute(0, 2, 1, 3, 4)
 
-            pdb.set_trace()
             if seg==True:
                 return None, fake_video,  m_mu, m_logvar, r_mu, r_logvar, segm_video # m_mu(60,365), m_logvar(60,365), r_mu(12,124), r_logvar(12,124)
             else:
