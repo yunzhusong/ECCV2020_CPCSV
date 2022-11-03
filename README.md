@@ -7,7 +7,7 @@ Author: [@yunzhusong](http://github.com/yunzhusong), [@theblackcat102](http://gi
 
 [Paper Link (ECCV 2020)](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620018.pdf)
 
-[Originization](https://github.com/basiclab/CPCStoryVisualization-Pytorch)
+[Organization](https://github.com/basiclab/CPCStoryVisualization-Pytorch)
 
 Code implementation for Character-Preserving Coherent Story Visualization
 
@@ -23,7 +23,7 @@ In this paper we propose a new framework named Character-Preserving Coherent Sto
 CP-CSV effectively learns to visualize the story by three critical modules: story and context encoder (story and sentence representation learning), figure-ground segmentation (auxiliary task to provide information for preserving character and story consistency), and figure-ground aware generation (image sequence generation by incorporating figure-ground information). Moreover, we propose a metric named Frechet Story Distance (FSD) to evaluate the performance of story visualization. Extensive experiments demonstrate that CP-CSV maintains the details of character information and achieves high consistency among different frames, while FSD better measures the performance of story visualization. The FVD evaluation metric is from [here](https://github.com/google-research/google-research/tree/master/frechet_video_distance).
 
 ## Datasets
-1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). Pororo, original pororo datasets with self labeled segmentation mask of the character.
+1. PORORO images and segmentation images can be downloaded [here](https://drive.google.com/file/d/1p_8xTivhjs0OaQ2vlQjd15qA7OKYsG4y/view?usp=sharing). Pororo, original pororo datasets with self labeled segmentation mask of the character.
 
 2. CLEVR with segmentation mask, 13755 sequence of images, generate using [Clevr-for-StoryGAN](https://github.com/theblackcat102/Clevr-for-StoryGAN)
 
@@ -39,7 +39,7 @@ images/
     CLEVR_new_013754_4_mask.png
 ```
 
-Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4c0md0CAK?usp=sharing)
+Download [link](https://drive.google.com/file/d/1w6z6VAcJiLwXK0tm6J84RqzERGxmBY24/view?usp=sharing)
 
 ## Setup environment
 
@@ -54,7 +54,7 @@ Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4
 
 ### Steps
 
-1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
+1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/file/d/1p_8xTivhjs0OaQ2vlQjd15qA7OKYsG4y/view?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
 
 2. Modify the **DATA_DIR** in _./cfg/final.yml_
 
@@ -72,11 +72,11 @@ Download [link](https://drive.google.com/drive/folders/1zRT5TCpHTzY32v0YTi9n9-L4
 
 ## Evaluate CPCSV
 
-Pretrained model can be download [here](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). 
+Pretrained model can be download [here](https://drive.google.com/drive/folders/1yqiUci54LvB0yG43oN2JoVjOdlRMeKGt?usp=sharing). 
 
 ### Steps
 
-1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/drive/folders/1Oy-Npt19hYvrGAB_u5c_XYnuBsoBu34b?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
+1. Download the Pororo dataset and put at **DATA_DIR**, [downloaded](https://drive.google.com/file/d/1p_8xTivhjs0OaQ2vlQjd15qA7OKYsG4y/view?usp=sharing). The dataset should contain SceneDialogues/  ( where gif files reside ) and *.npy files.
 
 2. Modify the **DATA_DIR** in _./cfg/final.yml_
 
@@ -95,7 +95,7 @@ Use the tensorboard to check the results.
 ```
 
 ## The slide and the presentation video:
-The slide and the presentation video can be found in [slides](https://drive.google.com/drive/folders/14LTxd9D1eAjEK4JaZpu0Bdhhc6zKoBMv?usp=sharing).
+The slide and the presentation video can be found in [slides](https://drive.google.com/drive/folders/1r0vZMNd2jRK0JN4VAgWfvhVjajq-w_E8?usp=share_link).
 
 
 ## Cite
